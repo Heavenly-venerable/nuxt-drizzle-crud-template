@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
-  modules: ["@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "@vueuse/nuxt", "@pinia/nuxt", "nuxt-auth-utils"],
   link: [
     {
       rel: "stylesheet",
@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     },
   ],
   runtimeConfig: {
-    databaseUrl: process.env.DATABASE_URL || ""
+    databaseUrl: process.env.DATABASE_URL || "",
+    jwtSecret: process.env.JWT_SECRET!
   }
 });
